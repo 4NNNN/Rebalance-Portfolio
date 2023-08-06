@@ -15,8 +15,7 @@ The key points :
 
 # UML Diagram
 
-![UML autobalance](https://github.com/4NNNN/Rebalance-Portfolio/assets/77784341/5438bb1b-f675-4bb3-b1ec-b561e5ce4d36)
-
+![UML](https://github.com/4NNNN/Rebalance-Portfolio/assets/77784341/17c6fcf6-85e8-4bae-955d-71190809a0e7)
 
 
 
