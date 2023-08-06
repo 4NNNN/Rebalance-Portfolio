@@ -1,0 +1,152 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        { "internalType": "address", "name": "_owner", "type": "address" },
+        { "internalType": "string", "name": "_name", "type": "string" }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        { "internalType": "string", "name": "_name", "type": "string" },
+        { "internalType": "string", "name": "_symbol", "type": "string" },
+        { "internalType": "address", "name": "_address", "type": "address" },
+        { "internalType": "uint256", "name": "_ratio", "type": "uint256" }
+      ],
+      "name": "addAsset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "assetIndex",
+      "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+      "name": "assets",
+      "outputs": [
+        { "internalType": "string", "name": "name", "type": "string" },
+        { "internalType": "string", "name": "symbol", "type": "string" },
+        {
+          "internalType": "address",
+          "name": "tokenAddress",
+          "type": "address"
+        },
+        { "internalType": "uint256", "name": "ratio", "type": "uint256" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "currentIndex",
+          "type": "uint256"
+        },
+        { "internalType": "uint256", "name": "amountIn", "type": "uint256" }
+      ],
+      "name": "buyAsset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "uint256", "name": "_assetIndex", "type": "uint256" },
+        { "internalType": "uint256", "name": "_assetRatio", "type": "uint256" }
+      ],
+      "name": "changeAssetRatio",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "uint256", "name": "_slippage", "type": "uint256" },
+        {
+          "internalType": "uint256",
+          "name": "_swapTimeLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_uniswapRouterAddress",
+          "type": "address"
+        }
+      ],
+      "name": "configure",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "uint256", "name": "amount", "type": "uint256" }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [{ "internalType": "uint256", "name": "i", "type": "uint256" }],
+      "name": "getAssetDetails",
+      "outputs": [
+        { "internalType": "string", "name": "", "type": "string" },
+        { "internalType": "string", "name": "", "type": "string" },
+        { "internalType": "address", "name": "", "type": "address" },
+        { "internalType": "uint256", "name": "", "type": "uint256" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAssetIndex",
+      "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "address", "name": "tokenA", "type": "address" },
+        { "internalType": "address", "name": "tokenB", "type": "address" }
+      ],
+      "name": "getTokenPrice",
+      "outputs": [
+        { "internalType": "uint256", "name": "", "type": "uint256" },
+        { "internalType": "uint256", "name": "", "type": "uint256" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "name",
+      "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rebalance",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+}
