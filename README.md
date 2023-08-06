@@ -1,3 +1,29 @@
+# Defi Rebalance Portfolio
+
+Accepts **USDC** and local pairs - **ARB,USDT,LBB,LVE**
+
+The key points :
+- Loops through assets and calculates amount to allocate based on ratio
+- Transfers USDC to buy each asset up to the allocation amount
+- Adjusts remaining USDC balance as it goes
+- Calculate target per asset based on ratio
+- Allocate the min(target, remaining balance) to each asset
+- Update remaining balance after each allocation
+- Exit when remaining hits zero
+
+# UML Diagram
+
+![UML autobalance](https://github.com/4NNNN/Rebalance-Portfolio/assets/77784341/5438bb1b-f675-4bb3-b1ec-b561e5ce4d36)
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
