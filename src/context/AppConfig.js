@@ -9,7 +9,7 @@ export const AppProvider = ({ children }) => {
     const [currentUser, setcurrentUser] = useState();
 
     const ABI = contr.abi;
-    const contractAddress = "0x9a1ebaa48297229195302a998afb9e60ac0f77fd"
+    const contractAddress = "0x9a1ebaa48297229195302a998afb9e60ac0f77fd" //configured,added assets,deposit,rebalance all the function are aldready tested in this address
 
     const requestAccount = async () => {
         const accns = await window.ethereum.request({

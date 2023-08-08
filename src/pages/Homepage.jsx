@@ -79,7 +79,7 @@ function Homepage() {
             onClick={() => configure("50", "600", "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D")}
             className="configure  px-4 py-2 rounded-xl hover:scale-105 hover:shadow-xl hover:border-4 hover:border-red-700 bg-red-400 text-white font-semibold transition-all ease-in-out mt-2 w-fit"
           >
-            Configure Env
+            Configure Env - OnlyOwner
           </button>
         </div>
 
@@ -97,7 +97,7 @@ function Homepage() {
             <div className="token2 flex flex-col justify-center items-center gap-2 bg-yellow-300 p-3 rounded-xl">
               <p className="tokenname">ARB</p>
               <div className="tokensymbol text-2xl font-extrabold p-1 bg-gray-400 rounded-xl mt-1">
-                ARBT
+                ARB
               </div>
               <div className="tokenratio">Ratio:2000</div>
               {/* <div className="tokenamount">Amount : </div> */}
@@ -105,7 +105,7 @@ function Homepage() {
             <div className="token3 flex flex-col justify-center items-center gap-2 bg-red-300 p-3 rounded-xl">
               <p className="tokenname">LBB</p>
               <div className="tokensymbol text-2xl font-extrabold p-1 bg-gray-400 rounded-xl mt-1">
-                LBBT
+                LBB
               </div>
               <div className="tokenratio">Ratio:2000</div>
               {/* <div className="tokenamount">Amount : </div> */}
