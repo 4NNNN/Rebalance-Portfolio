@@ -56,6 +56,10 @@ The key points :
 # Demo Video
 
 
+https://github.com/4NNNN/Rebalance-Portfolio/assets/77784341/901893bc-769d-4697-8ff9-c34cdba0140f
+
+
+
 
 
 
