@@ -1,8 +1,38 @@
 # Defi Rebalance Portfolio
 
-Goerli Address - 0x9A1EbaA48297229195302a998AFB9e60aC0f77fd
+Goerli contract Address - 0x9A1EbaA48297229195302a998AFB9e60aC0f77fd (ARB,USDT,LLB assets as aldready been configured and tested - transaction hashes are attached below)
 
-Accepts **USDC** and local pairs - **ARB,USDT,LBB,LVE**
+ARB erc20 contract address - 0x246Edf1B3199D21FD29e62ff4d9c94b5e0d541b6
+
+LLB erc20 contract address - 0x7F9BBD75Cd137C2819DAd6bA1287a5b000Be435C
+
+USDT erc20 contract address - 0x03E7568Bbe49AF8020E18Ec2D29A1bF5c3D10C2f
+
+**Transaction Hashes :**
+
+Deposit of USDC and auto-rebalance: https://goerli.etherscan.io/tx/0x1b6d6b70179798b639d46a7b8dd0cd3284509fa7c1da21d19916bd74b27323d2
+
+Manual rebalance - https://goerli.etherscan.io/tx/0x3ae489c7fc06cc19a807b56f8fa443f9ce642878cf8ee50064badcbb853beb5a
+
+**Uniswap V2 pairs created:**
+
+USDC <-> ARB,USDT,LLB
+
+Accepts **USDC** and local pairs - **ARB,USDT,LLB**
+
+# Testing Purposes:
+
+1. Deploy a fresh smart-contract/autobalance.sol smart contract in GOERLI and it must be done in goerli as the USDC contract address is hardcoded.
+2. Copy and paste the autobalance contract address in the [appconfig.js](https://github.com/4NNNN/Rebalance-Portfolio/blob/99b4855c5fcca24d54248ab23f928adc0d4d0cd8/src/context/AppConfig.js#L12) frontend
+3. Run npm i and configure the project, then run "npm start"
+4. Click the [link](https://goerli.etherscan.io/address/0x8c803734e66EAeE8DCF1c9BE9c18747A4b302480) to USDC contract and mint some USDC to your wallet
+5. Navigate to the frontend of the project, click configure automatically configures (swaptimelimit,slippage and goerli uniswaprouteraddress)
+6. Then add assets with params as given --> (ARB,ARB,0x246Edf1B3199D21FD29e62ff4d9c94b5e0d541b6,2000),(LBB,LBB,0x7F9BBD75Cd137C2819DAd6bA1287a5b000Be435C,2000),(USDT,USDT,0x03E7568Bbe49AF8020E18Ec2D29A1bF5c3D10C2f,2000)
+7. The ratio is 20% which is 2000/10000 as solidity decimals restriction and required ratio in the assignment details is 20%. Or else any percentage of ratio can be configured be it 0 to 10000 which is 0% to 100%
+8. Deposit and rebalance function -> transferfrom's USDC from msg.sender to contract and auto-rebalances
+9. Rebalance manually rebalances all the assets
+10. The edge cases like less liquidity is solved by [hassufficientliquidity](https://github.com/4NNNN/Rebalance-Portfolio/blob/99b4855c5fcca24d54248ab23f928adc0d4d0cd8/Smart-contract/autobalance.sol#L478) function
+11. Tokenprices for now can only be checked through the smart contract only.
 
 The key points :
 - Loops through assets and calculates amount to allocate based on ratio
@@ -13,6 +43,7 @@ The key points :
 - Update remaining balance after each allocation
 - Exit when remaining hits zero
 
+
 # UML Diagram
 
 ![UML](https://github.com/4NNNN/Rebalance-Portfolio/assets/77784341/17c6fcf6-85e8-4bae-955d-71190809a0e7)
@@ -22,76 +53,10 @@ The key points :
 
 
 
+# Demo Video
 
 
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
